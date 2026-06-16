@@ -1,0 +1,802 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\title{热学期中复习笔记}
+\date{}
+\author{周锦添}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{热力学系统与基础概念}
+
+\subsection{热力学系统 (Thermodynamic System)}
+\begin{itemize}
+    \item \textbf{系统定义}：由大量微观粒子（分子、原子等）组成的宏观物体。
+    \item \textbf{外界 (Surroundings)}：系统以外与之有相互作用的物体。
+    \item \textbf{分类}：
+    \begin{itemize}
+        \item 孤立系统：与外界既无能量交换也无物质交换。
+        \item 封闭系统：与外界有能量交换但无物质交换。
+        \item 开放系统：与外界既有能量交换又有物质交换。
+    \end{itemize}
+\end{itemize}
+
+\subsection{状态参量 (State Parameters)}
+描述系统宏观性质的物理量。
+\begin{itemize}
+    \item \textbf{广延量 (Extensive Parameters)}：具有可加性，如体积 $V$、内能 $E$、熵 $S$、摩尔数 $\nu$。
+    \item \textbf{强度量 (Intensive Parameters)}：不具有可加性，与系统大小无关，如压强 $P$、温度 $T$。
+\end{itemize}
+
+\subsection{平衡态与弛豫时间}
+\begin{itemize}
+    \item \textbf{平衡态}：在无外界影响下，系统的宏观性质不随时间改变的状态。
+    \item \textbf{非平衡态} $\xrightarrow{\text{弛豫时间}}$ \textbf{平衡态}。
+    \item \textbf{弛豫时间 ($\tau$)}：系统由非平衡态过渡到平衡态所需的时间。
+\end{itemize}
+
+\subsection{基本物理量}
+\begin{itemize}
+    \item \textbf{温度 ($T$)}：表征物体冷热程度的物理量，微观上是分子热运动平均平动动能的量度。
+    \item \textbf{热量 ($Q$)}：由于温度差而转移的能量。
+    \item \textbf{热容 ($C$)}：系统温度升高 $1\text{K}$ 所吸收的热量，$C = \frac{dQ}{dT}$。
+\end{itemize}
+
+\section{热力学第零定律与温标}
+
+\subsection{热力学第零定律}
+若物体 A 和 B 分别与物体 C 达到热平衡，则 A 和 B 之间也处于热平衡。该定律是温度定义的实验基础。
+
+\subsection{温度计与温标}
+\begin{itemize}
+    \item \textbf{温标要素}：测温物质、测温属性、固定点、分度方式。
+    \item \textbf{常见温标}：华氏温标 ($^\circ\text{F}$)、摄氏温标 ($^\circ\text{C}$)。
+    \item \textbf{定体气体温度计}：利用查理定律 (Charle's Law)。
+    \item \textbf{定压气体温度计}：利用盖-吕萨克定律 (Gay-Lussac Law)。
+    \item \textbf{理想气体温标}：
+    \begin{itemize}
+        \item $T/K = 273.15 + t/^\circ\text{C}$
+        \item 水的三相点温度定义为：$T_{tr} = 273.16\text{K}$。
+    \end{itemize}
+    \item \textbf{热力学温标}（由统计物理给出定义）：
+    \[ \beta = \frac{1}{k_B T} = \frac{\partial \ln \Omega}{\partial E} \]
+    其中 $\Omega$ 为微观状态数，$E$ 为系统能量。
+\end{itemize}
+
+\section{状态方程与经验定律}
+
+\subsection{状态方程}
+对于简单系统，存在函数关系：$f(P, V, T) = 0$。
+\begin{itemize}
+    \item \textbf{理想气体状态方程}：$PV = \nu RT$。
+    \item \textcolor{red}{\textbf{态函数}}：其变化量只取决于初末态，与路径无关。数学表示为全微分，即 \textcolor{red}{$\oint d\varphi = 0$}。
+    \item \textbf{$P-V-T$ 相图}：描述系统状态变化的几何表示。
+\end{itemize}
+
+\subsection{气体经验定律}
+\begin{itemize}
+    \item \textbf{玻意耳定律 (Boyle Law)}：温度恒定时，$P \propto \frac{1}{V}$。
+    \item \textbf{查理定律 (Charle's Law)}：体积恒定时，$P \propto T$。
+    \item \textbf{盖-吕萨克定律 (Gay-Lussac Law)}：压强恒定时，$V \propto T$。
+\end{itemize}
+
+\subsection{普适气体恒量 $R$ 的推导}
+在低压极限（$P \to 0$）下，实际气体趋近于理想气体：
+\begin{itemize}
+    \item $P \to 0$ 时，体胀系数 $\alpha_p \to \frac{1}{T_0}$。
+    \item $P = P_0(1 + \alpha_p T)$。
+    \item 定义温度：$\frac{T}{T_0} = \lim_{P_0 \to 0} \left( \frac{P}{P_0} \right)_V = \lim_{P_0 \to 0} \left( \frac{V}{V_0} \right)_P$。
+    \item $R = \lim_{P \to 0} \left( \frac{P V_{m,tr}}{T_{tr}} \right) = \left( \frac{P_{tr} V_{m,tr}}{273.16} \right) = 8.31446 \, \text{J}/(\text{K}\cdot\text{mol})$。
+\end{itemize}
+
+\section{实际气体与范德瓦耳斯方程}
+
+\subsection{实际气体对理想气体的偏离}
+理想气体忽略了分子本身的体积和分子间的相互作用力。
+\begin{enumerate}
+    \item \textbf{分子间引力（导致内压强增加）}：
+    当分子距离较大时表现为引力，$P \downarrow \Rightarrow$ 势能降低。
+    推导思路：
+    \begin{itemize}
+        \item 考虑靠近器壁的一层分子，受内部分子的指向内部的合引力。
+        \item 该引力 $\Delta P \propto N'$（碰撞壁面的分子数密度）且 $\propto N$（吸管内的总分子数密度）。
+        \item 因为 $N = \frac{\nu N_A}{V} = \frac{N_A}{V_m}$，故 $\Delta P \propto \left(\frac{N_A}{V_m}\right)^2 \propto \frac{1}{V_m^2}$。
+        \item \textbf{内压强} $= \frac{a}{V_m^2}$。
+        \item \textbf{实际压强} $P = P_{\text{观察}} + P_{\text{内}}$。
+        \item 势能修正项表示为：$-a \nu \times \frac{\nu}{V} = - \frac{a \nu^2}{V^2}$。
+    \end{itemize}
+    \item \textbf{分子本身体积（导致有效空间减小）}：
+    \begin{itemize}
+        \item 分子间的排斥力表现为分子不能互相重叠，存在“排斥体积” $b$。
+        \item \textbf{排斥体积推导}：两个半径为 $r$ 的硬球分子，中心间距不能小于 $2r$。
+        \item 排除体积为 $\frac{4}{3}\pi (2r)^3 = 8 \times (\text{单个分子体积 } V_0)$。
+        \item 平均到每个分子，排除体积 $b = \frac{1}{2} \times 8 V_0 N_A = 4 N_A V_0$。
+        \item 萨瑟兰 (Sutherland) 模型给出：$a = 4 V_0 \varepsilon_0 N_A^2$。
+    \end{itemize}
+\end{enumerate}
+
+\subsection{范德瓦耳斯方程 (van der Waals Equation)}
+考虑以上修正后，摩尔气体的状态方程为：
+\[ \left( P + \frac{a}{V_m^2} \right)(V_m - b) = RT \]
+其中：
+\begin{itemize}
+    \item $a$ 为反映分子引力的常数。
+    \item $b$ 为反映分子本身体积的常数。
+\end{itemize}
+
+\subsection{维里展开 (Virial Expansion)}
+范德瓦耳斯方程是特殊的带有二阶项的方程。实际气体更普适的表达方式为维里展开：
+\begin{itemize}
+    \item 按 $V_m^{-1}$ 展开：$PV_m = A + \frac{B}{V_m} + \frac{C}{V_m^2} + \dots$
+    \item 按 $P$ 展开：$PV_m = A' + B'P + C'P^2 + \dots$
+    \item 压缩因子形式：$\frac{PV_m}{RT} = 1 + \frac{B}{V_m} + \dots$
+\end{itemize}
+
+\subsection{道尔顿分压定律 (Dalton's Law of Partial Pressures)}
+混合气体的总压强等于各组分分压之和：$P = \sum P_i$。
+
+\section{热力学系数与物态方程推导}
+
+\subsection{热膨胀与压缩系数}
+为了定量描述物质的热力学特性，定义以下三个重要的实验可测响应系数：
+\begin{itemize}
+    \item \textbf{体膨胀系数 ($\alpha$)}：在压强不变时，单位体积随温度的变化率。
+    \[ \alpha = \lim_{\Delta T \to 0} \frac{1}{V} \frac{\Delta V}{\Delta T} = \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P \]
+    \item \textbf{等体压强系数 ($\beta$)}：在体积不变时，单位压强随温度的变化率。
+    \[ \beta = \lim_{\Delta T \to 0} \frac{1}{P} \frac{\Delta P}{\Delta T} = \frac{1}{P} \left( \frac{\partial P}{\partial T} \right)_V \]
+    \item \textbf{等温压缩系数 ($\kappa$)}：在温度不变时，压强升高导致体积缩小的变化率（通常加负号使系数为正）。
+    \[ \kappa = - \frac{1}{V} \left( \frac{\partial V}{\partial P} \right)_T \]
+\end{itemize}
+
+\textbf{三者之间的关系推导}：
+利用多元函数循环偏导关系 $\left( \frac{\partial V}{\partial T} \right)_P \left( \frac{\partial T}{\partial P} \right)_V \left( \frac{\partial P}{\partial V} \right)_T = -1$，可以导出：
+\[ \alpha V \cdot \frac{1}{\beta P} \cdot \left( -\frac{1}{\kappa V} \right) = -1 \quad \Rightarrow \quad \alpha = \kappa \beta P \]
+
+\subsection{范德瓦耳斯方程下的压强温度系数 $\alpha_p$}
+板书左上方讨论了范德瓦耳斯气体在接近理想气体时的表现：
+\begin{enumerate}
+    \item \textbf{方程形式}：$P = \frac{\nu RT}{V - \nu b} - \frac{\nu^2 a}{V^2}$。
+    \item \textbf{初态}：在 $t=0^\circ\text{C}$ 时，$P_0 = \frac{\nu R T_0}{V - \nu b} - \frac{\nu^2 a}{V^2}$。
+    \item \textbf{推导 $\alpha_p$}：根据 $P = P_0(1 + \alpha_p t)$，有 $\alpha_p P_0 = \left( \frac{\partial P}{\partial T} \right)_V$。
+    \item \textbf{求导}：$\left( \frac{\partial P}{\partial T} \right)_V = \frac{\nu R}{V - \nu b}$。
+    \item \textbf{结果}：
+    \[ \alpha_p = \frac{\frac{\nu R}{V - \nu b}}{P_0} = \frac{\frac{\nu R}{V - \nu b}}{\frac{\nu R T_0}{V - \nu b} - \frac{\nu^2 a}{V^2}} = \frac{R}{R T_0 - \frac{\nu a (V - \nu b)}{V^2}} \]
+    当 $P \to 0$（即 $V \to \infty$）时，$\alpha_p \to \frac{1}{T_0}$，回归到理想气体结论。
+\end{enumerate}
+
+\subsection{热力学量的微分关系与积分}
+考虑体积 $V(T, P)$ 的全微分：
+\[ dV = \left( \frac{\partial V}{\partial T} \right)_P dT + \left( \frac{\partial V}{\partial P} \right)_T dP = V \alpha dT - V \kappa dP \]
+\[ \frac{dV}{V} = \alpha dT - \kappa dP \]
+若考虑某种近似关系（如板书下方的推导）：
+\[ d(PV) = \nu R dT - (a \rho) dP \quad \Rightarrow \quad PV = \nu RT - \frac{1}{2} a P^2 + C \]
+注：此处展示了如何通过微分形式寻找系统状态量的演化关系。
+
+\section{分子间相互作用模型}
+
+\subsection{分子间相互作用势能 $\varphi(r)$}
+分子间作用力由引力和斥力共同组成，其势能通常表示为：
+\[ \varphi(r) = \frac{\lambda}{r^n} - \frac{\mu}{r^m} \quad (\text{其中 } n > m) \]
+\begin{itemize}
+    \item \textbf{刚体模型}：$\varphi(r) = 0$ (当 $r > d$)；$\varphi(r) = \infty$ (当 $r \le d$)。
+    \item \textbf{萨瑟兰 (Sutherland) 模型}：考虑了吸引力项的刚体模型。
+    \item \textbf{Lennard-Jones (12-6) 势}：最常用的经验势模型。
+    \[ \varphi(r) = 4\varepsilon \left[ \left( \frac{d}{r} \right)^{12} - \left( \frac{d}{r} \right)^6 \right] \]
+    其中 $d$ 为分子直径（或排斥直径），$\varepsilon$ 为势阱深度。
+\end{itemize}
+
+\section{气体动理论基础：压强的微观解释}
+
+\subsection{统计假设与局部平衡}
+假设气体处于各向同性的平衡态，分子在各方向运动的概率相等，即 $n(\vec{v}_i)$ 分布均匀。
+
+\subsection{压强公式推导}
+\begin{enumerate}
+    \item \textbf{碰撞模型}：考虑垂直于 $x$ 轴的器壁 $\Delta S$。单个质量为 $m$ 的分子以 $v_{ix}$ 碰撞并反弹，动量变化量为 $\Delta p = 2mv_{ix}$。
+    \item \textbf{碰撞数统计}：在 $\Delta t$ 时间内，速度为 $v_{ix}$ 且能碰撞到器壁的分子位于体积为 $v_{ix} \Delta t \Delta S$ 的柱体内。
+    \item \textbf{总冲量}：$I = \sum_{v_{ix}>0} (2 m v_{ix}) \cdot [n(\vec{v}_i) v_{ix} \Delta t \Delta S]$。
+    \item \textbf{平均力与压强}：
+    \[ P = \frac{F}{\Delta S} = \frac{I}{\Delta t \Delta S} = \sum_{v_{ix}>0} 2 m v_{ix}^2 n(\vec{v}_i) \]
+    由于各向同性，利用全空间求和并取平均值：
+    \[ P = n \sum_{-\infty}^{\infty} m v_{ix}^2 \frac{n(\vec{v}_i)}{n} = n m \overline{v_x^2} \]
+    \item \textbf{均分原理}：根据 $\overline{v^2} = \overline{v_x^2} + \overline{v_y^2} + \overline{v_z^2}$ 且 $\overline{v_x^2} = \overline{v_y^2} = \overline{v_z^2}$，得 $\overline{v_x^2} = \frac{1}{3} \overline{v^2}$。
+    \[ P = \frac{1}{3} n m \overline{v^2} = \frac{2}{3} n \left( \frac{1}{2} m \overline{v^2} \right) = \frac{2}{3} n \bar{\epsilon}_k \]
+\end{enumerate}
+
+\subsection{宏观量与微观量的联系}
+将微观压强公式与理想气体状态方程 $P = n k_B T$ 对比：
+\begin{itemize}
+    \item \textbf{分子平均平动动能}：$\bar{\epsilon}_k = \frac{3}{2} k_B T$。
+    \item \textbf{结论}：温度是分子平均平动动能的量度。
+\end{itemize}
+
+\subsection{事件概率与随机变量}
+在处理大量微观粒子的统计性质时，需要引入概率论描述。
+\begin{itemize}
+    \item \textbf{连续随机变量 (Continuous Random Variable)}：
+    系统的状态参量在某一区间内连续取值。
+    \item \textbf{归一化条件 (Normalization Condition)}：
+    全概率之和必须为 1。
+    \[ \int dP = \int f(x) dx = 1 \]
+    \item \textbf{概率密度函数 (Probability Density Function, PDF)}：
+    定义为单位区间的概率。
+    \[ f(x) = \frac{dP}{dx} \]
+    \item \textbf{统计实验估计}（频率近似概率）：
+    \[ dP = \frac{dN}{N} = \frac{h(x) dx}{\int h(x) dx} \]
+    其中 $h(x)$ 为观测到的频数分布。
+\end{itemize}
+
+\subsection{随机变量的特征值与线性变换}
+\begin{itemize}
+    \item \textbf{线性变换}：
+    若 $y = ax + b$，则其平均值和方差遵循：
+    \[ \langle y \rangle = a \langle x \rangle + b \]
+    \[ \sigma_y^2 = a^2 \sigma_x^2 \]
+    \item \textbf{独立变量 (Independent Variables)}：
+    若 $u, v$ 相互独立，其联合概率密度等于各自概率密度的乘积：
+    \[ \iint f_u(u) f_v(v) \, du \, dv = \left( \int f_u(u) \, du \right) \left( \int f_v(v) \, dv \right) \]
+    \item \textbf{独立变量之和}：
+    设 $Y = \sum_{i=1}^n X_i$，且 $X_i$ 相互独立并服从相同分布，则：
+    \[ \bar{Y} = n \bar{X}, \quad \sigma_Y = \sqrt{n} \sigma_X \]
+\end{itemize}
+
+\subsection{常见统计分布模型}
+
+\subsubsection{二项分布 (Binomial Distribution)}
+适用于只有两种可能结果（如“分小球模型”：在或不在某个区域内）的独立重复实验。
+\begin{itemize}
+    \item \textbf{特征值}：
+    \[ \bar{k} = np, \quad \sigma_k^2 = np(1-p) \]
+    \item \textbf{相对涨落 (Relative Fluctuation)}：
+    \[ \frac{\sigma_k}{\bar{k}} = \sqrt{\frac{1-p}{np}} \]
+    当粒子数 $n \to \infty$ 时，相对涨落趋于 0，体现了宏观规律的确定性。
+    \item \textbf{分小球模型应用}：
+    \[ \bar{n}_1 = pN, \quad \overline{n_1^2} = \bar{n}_1^2 + pqN \]
+    其中 $q = 1-p$。
+\end{itemize}
+
+\subsubsection{高斯分布 (Gauss Distribution / Normal Distribution)}
+大量独立随机变量之和在极限下服从的分布。
+\begin{itemize}
+    \item \textbf{分布函数}：$P(x) = C e^{-\frac{x^2}{2a^2}}$。
+    \item \textbf{归一化系数推导}：
+    利用 $\int_{-\infty}^{+\infty} P(x) \, dx = 1$，得 $1 = C \sqrt{2\pi a^2}$，故 $C = \frac{1}{\sqrt{2\pi} a}$。
+    \item \textbf{矩量 (Moments)}：
+    \[ \bar{x} = \int_{-\infty}^{+\infty} x P(x) \, dx = 0 \quad (\text{奇函数积分}) \]
+    \[ \overline{x^2} = a^2 \]
+\end{itemize}
+
+\section{麦克斯韦分布的数学推导基础}
+
+\subsection{各向同性假设下的函数形式推导}
+假设分子的速度分布在空间各方向是对称的（各向同性），即联合分布函数 $f(x, y)$ 仅取决于距离 $r^2 = x^2 + y^2$：
+\begin{enumerate}
+    \item \textbf{假设条件}：$f(x, y) = f(x^2 + y^2) = g(x)g(y)$。
+    \item \textbf{对数化}：$\ln f(r^2) = \ln g(x^2) + \ln g(y^2)$。
+    \item \textbf{分离变量法}：对各分量求导。
+    \[ \frac{\partial \ln f(r^2)}{\partial r^2} = \frac{\partial \ln g(x^2)}{\partial x^2} = \frac{\partial \ln g(y^2)}{\partial y^2} = -\alpha \quad (\text{常数}) \]
+    \item \textbf{解微分方程}：
+    \[ \ln f(r) = -\alpha r^2 + C \quad \Rightarrow \quad f(r) = A e^{-\alpha r^2} \]
+    对于单分量 $g(x)$，考虑平移后的通用形式：
+    \[ g(x) = \sqrt{\frac{\alpha}{\pi}} e^{-\alpha(x-\mu)^2} \]
+    \item \textbf{与方差的关系}：
+    令 $\sigma^2 = \frac{1}{2\alpha}$，则 $\alpha = \frac{1}{2\sigma^2}$。
+    得到标准正态分布形式：
+    \[ g(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]
+\end{enumerate}
+
+\subsection{坐标变换与极坐标下的统计值}
+\begin{itemize}
+    \item \textbf{坐标变换}：
+    将二维高斯分布从直角坐标变换到极坐标：
+    \[ f(x, y) \, dx \, dy = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2+y^2}{2\sigma^2}} \, dx \, dy = \frac{1}{2\pi\sigma^2} e^{-\frac{r^2}{2\sigma^2}} r \, dr \, d\theta \]
+    对 $\theta$ 积分（$0 \to 2\pi$）后得到径向分布。
+\end{itemize}
+
+\subsection{速度/距离相关的特征速率总结}
+基于上述高斯形式推导出的特征值（注意：此处 $\sigma$ 与具体的物理量相关）：
+\begin{itemize}
+    \item \textbf{最概然值 (Peak Value)}：$r_p = \sigma$。
+    \item \textbf{平均值 (Mean Value)}：$\bar{r} = \sqrt{\frac{\pi}{2}} \sigma$。
+    \item \textbf{方均值 (Mean Square Value)}：$\overline{r^2} = 2\sigma^2$ \textcolor{red}{（注意此处不是 $a^2$）}。
+    \item \textbf{方均根值 (Root Mean Square Value)}：$r_{rms} = \sqrt{\overline{r^2}} = \sqrt{2} \sigma$。
+\end{itemize}
+
+\section{麦克斯韦速率分布律 (Maxwell Distribution)}
+
+\subsection{速度分布函数定义}
+在平衡态下，研究分子速度在速度空间（$v_x, v_y, v_z$）中的分布：
+\begin{itemize}
+    \item \textbf{定义}：单位速度体积内的分子数占比。
+    \[ f(v_x, v_y, v_z) = \frac{dN(v_x, v_y, v_z)}{N \, dv_x \, dv_y \, dv_z} \]
+    \item \textbf{基本假设}：分子的三个速度分量 $v_x, v_y, v_z$ 相互独立，且每个分量都服从均值为 0 的高斯（正态）分布。
+\end{itemize}
+
+\subsection{麦克斯韦速度与速率分布公式}
+\begin{enumerate}
+    \item \textbf{速度分布}：
+    基于前述高斯推导，代入物理量（其中 $\alpha = \frac{m}{2k_B T}$）：
+    \[ f(v_x, v_y, v_z) = \left( \frac{m}{2\pi k_B T} \right)^{3/2} e^{-\frac{m(v_x^2 + v_y^2 + v_z^2)}{2k_B T}} = \left( \frac{m}{2\pi k_B T} \right)^{3/2} e^{-\frac{mv^2}{2k_B T}} \]
+    \item \textbf{速率分布}：
+    利用球坐标变换，在速度空间中取半径为 $v$、厚度为 $dv$ 的薄球壳，球壳体积为 $4\pi v^2 dv$：
+    \[ f(v) = 4\pi v^2 \left( \frac{m}{2\pi k_B T} \right)^{3/2} e^{-\frac{mv^2}{2k_B T}} \]
+\end{enumerate}
+
+\subsection{特征速率 (Characteristic Speeds)}
+通过对 $f(v)$ 求极值或进行矩量积分，得到三种典型速率：
+\begin{itemize}
+    \item \textbf{最概然速率 (Most Probable Speed)}：$v_p = \sqrt{\frac{2k_B T}{m}}$
+    \item \textbf{平均速率 (Mean Speed)}：$\bar{v} = \sqrt{\frac{8k_B T}{\pi m}}$
+    \item \textbf{方均根速率 (Root Mean Square Speed)}：$v_{rms} = \sqrt{\overline{v^2}} = \sqrt{\frac{3k_B T}{m}}$
+\end{itemize}
+
+\subsection{实验验证 (Experimental Verification)}
+\begin{itemize}
+    \item \textbf{斯特恩 (O. Stern) 实验}：分子束方法初步验证。
+    \item \textbf{葛正权实验}：对斯特恩实验的改进。
+    \item \textbf{Miller-Kusch 实验}：利用旋转圆筒（旋转选速器）精确测量速率分布。
+    \begin{itemize}
+        \item 物理模型：$\Delta t = \frac{R-r}{v}$，圆筒转动位移 $d = R\omega \Delta t = \frac{R(R-r)\omega}{v}$。
+    \end{itemize}
+\end{itemize}
+
+\section{玻尔兹曼分布与势场中的粒子分布}
+
+\subsection{重力场中的压强分布推导}
+考虑处于重力场中的气体薄层（高度 $z$ 到 $z+dz$）：
+\begin{enumerate}
+    \item \textbf{力学平衡}：上下表面压强差抵消重力。
+    \[ (P + dP) dS - P dS = - n m g dS dz \quad \Rightarrow \quad dP = -n m g dz \]
+    \item \textbf{状态方程代入}：由 $P = n k_B T$（假设等温），有 $dP = k_B T dn$。
+    \item \textbf{微分方程}：$k_B T dn = -n m g dz \quad \Rightarrow \quad \frac{dn}{n} = -\frac{mg}{k_B T} dz$。
+    \item \textbf{积分结果}：
+    \[ n(z) = n_0 e^{-\frac{mgz}{k_B T}} \quad \text{或} \quad P(z) = P_0 e^{-\frac{mgz}{k_B T}} \]
+\end{enumerate}
+
+\subsection{广义玻尔兹曼分布 (Boltzmann Distribution)}
+若粒子处于势能为 $\epsilon_p$ 的外力场中：
+\[ n = n_0 e^{-\frac{\epsilon_p}{k_B T}} \]
+推导中用到的等温假设：$\nabla P + n \nabla U = 0$。
+
+\subsection{麦克斯韦-玻尔兹曼分布 (M-B Distribution)}
+综合速度与空间分布，平衡态下粒子在速度空间与实空间的联合分布为：
+\[ f_{MB}(\vec{v}, \vec{r}) = C_{MB} e^{-\frac{\epsilon_k + \epsilon_p}{k_B T}} \]
+其中 $\epsilon_k = \frac{1}{2}mv^2$ 为动能。
+
+\section{碰撞与泻流 (Effusion)}
+
+\subsection{碰撞数与泻流率推导}
+\begin{itemize}
+    \item \textbf{立体角基础}：$\Omega = \frac{A}{r^2}$。在球坐标下，$d\Omega = \frac{(2\pi r \sin\theta) \cdot (r d\theta)}{r^2} = 2\pi \sin\theta d\theta$。
+    \item \textbf{泻流强度 (Effusion Flux)}：单位时间内通过小孔射向 $\theta$ 方向的粒子数。
+    \[ J = \int_0^\infty \int_0^{\pi/2} n v \cos\theta f(v) dv \cdot \left( \frac{1}{2} \sin\theta d\theta \right) \]
+    \item \textbf{结论}：单位时间单位面积通过小孔的粒子总数为：
+    \[ J = \frac{1}{4} n \bar{v} \]
+    \item \textbf{泻流分压比}：$\frac{J_1}{J_2} = \frac{n_1}{n_2} \sqrt{\frac{m_2}{m_1}}$（常用于同位素分离）。
+\end{itemize}
+
+\subsection{泻流束的速率分布}
+泻流出的分子由于其运动方向趋向小孔，其速率分布不再是 $f(v)$，而是：
+\[ f_{\text{eff}}(v) \propto v^3 e^{-\frac{mv^2}{2k_B T}} \]
+\textbf{泻流平均动能}：
+\[ \bar{\epsilon}_k = \frac{1}{2} m \overline{v^2}_{\text{eff}} = \frac{\frac{1}{2}m \int_0^\infty v^3 \cdot v^2 e^{-\frac{mv^2}{2k_B T}} dv}{\int_0^\infty v^3 e^{-\frac{mv^2}{2k_B T}} dv} = 2k_B T \]
+（注意：高于理想气体的 $\frac{3}{2}k_B T$，因为速度快的分子更有可能从小孔逃逸）。
+
+\section{能量均分定理 (Equipartition of Energy)}
+
+在平衡态下，分子的每一个独立坐标（平方项形式的自由度）平均具有 $\frac{1}{2} k_B T$ 的能量。
+\begin{itemize}
+    \item \textbf{平均总能量}：
+    \[ \bar{E} = (t + r + 2s) \cdot \frac{1}{2} k_B T \]
+    其中：
+    \begin{itemize}
+        \item $t$：平动自由度 (Translational)。
+        \item $r$：转动自由度 (Rotational)。
+        \item $s$：振动自由度 (Vibrational)。注意振动包含动能和势能两个平方项，故对应 $2 \times \frac{1}{2} k_B T$。
+    \end{itemize}
+\end{itemize}
+
+\section{热容理论与经典统计局限}
+
+\subsection{热容 (Heat Capacity) 的定义与分类}
+热容描述系统温度升高时吸收热量的能力：
+\[ C = \lim_{\Delta T \to 0} \frac{\Delta Q}{\Delta T} \]
+根据约束条件和研究对象不同，分为以下几类：
+\begin{itemize}
+    \item \textbf{定体热容 ($C_V$)}：体积保持不变（$V = \text{const}$）。
+    \item \textbf{摩尔热容 ($C_{mol}$)}：研究对象为 $1 \, \text{mol}$ 物质。
+    \item \textbf{比热容 ($c$)}：研究对象为单位质量 ($1 \, \text{kg}$) 物质。
+\end{itemize}
+
+\subsection{能量均分定理的应用}
+对于理想气体，摩尔定体热容与分子的自由度 $i$ 有关：
+\[ C_V^{mol} = \frac{i}{2} R \]
+其中 $R$ 为普适气体恒量。
+
+\subsection{杜隆-珀蒂定律 (Dulong-Petit Law)}
+对于固体，假设原子在平衡位置附近作三维振动：
+\begin{itemize}
+    \item \textbf{内能}：每个振动自由度包含动能和势能，贡献为 $k_B T$。三维振动对应 $3k_B T$。
+    \item \textbf{结论}：$U^{mol} = 3RT$，则 $C^{mol} = 3R$。
+    \item \textbf{适用范围}：该定律在高温下符合较好，但在低温下失效，需要引入量子统计理论。
+\end{itemize}
+
+\section{量子力学基础与粒子对称性}
+
+\subsection{哈密顿量与薛定谔方程}
+微观粒子的状态由波函数 $\Psi(r, t)$ 描述，满足含时薛定谔方程：
+\[ i\hbar \frac{\partial}{\partial t} \Psi(r, t) = \hat{H} \Psi(r, t) \]
+对于定态系统：
+\[ \hat{H} \Psi(r) = E \Psi(r) \]
+
+\subsection{玻色子与费米子 (Bosons and Fermions)}
+根据微观粒子的全同性原理和自旋量子数，粒子分为两类：
+\begin{enumerate}
+    \item \textbf{玻色子 (Bosons)}：
+    \begin{itemize}
+        \item \textbf{特性}：自旋为整数；波函数具有\textbf{交换对称性}（$|0\rangle|0\rangle, |1\rangle|1\rangle, \frac{1}{\sqrt{2}}(|1\rangle|0\rangle + |0\rangle|1\rangle)$）。
+        \item \textbf{占据态}：一个量子态可以容纳任意数量的粒子。
+    \end{itemize}
+    \item \textbf{费米子 (Fermions)}：
+    \begin{itemize}
+        \item \textbf{特性}：自旋为半整数；波函数具有\textbf{交换反对称性}（$\frac{1}{\sqrt{2}}(|1\rangle|0\rangle - |0\rangle|1\rangle)$）。
+        \item \textbf{泡利不相容原理}：每个量子态最多只能容纳一个粒子。
+    \end{itemize}
+\end{enumerate}
+
+\section{三大统计分布的微观状态数推导}
+
+在统计力学中，我们研究 $N$ 个粒子分布在能级 $\epsilon_i$ 上，每个能级有 $g_i$ 个简并态，对应的占据数为 $N_i$。
+
+\subsection{玻尔兹曼系统 (Boltzmann System)}
+\textbf{假设}：粒子是可分辨的（经典极限），且不限制每个能级的粒子数。
+\[ \Omega_{BM} = \frac{N!}{\prod_i N_i!} \prod_i g_i^{N_i} \]
+
+\subsection{玻色系统 (Bose System)}
+\textbf{假设}：粒子全同且不可分辨，不满足泡利不相容原理。
+此问题等价于将 $N_i$ 个不可辨粒子放入 $g_i$ 个简并态中，采用隔板法推导：
+\[ \Omega_B = \prod_i \frac{(N_i + g_i - 1)!}{N_i! (g_i - 1)!} \]
+
+\subsection{费米系统 (Fermi System)}
+\textbf{假设}：粒子全同且不可分辨，满足泡利不相容原理（每个简并态 $\le 1$ 个粒子）。
+此问题等价于从 $g_i$ 个态中选出 $N_i$ 个态被占据：
+\[ \Omega_F = \prod_i \frac{g_i!}{N_i! (g_i - N_i)!} \]
+
+\section{最概然分布的数学求解}
+
+\subsection{数学工具：斯特林公式 (Stirling's Approximation)}
+当 $n$ 很大时，用于处理阶乘的近似：
+\[ \ln n! \approx n \ln n - n \]
+
+\subsection{拉格朗日乘子法 (Lagrange Multipliers)}
+为了求出平衡态下的最概然分布，即在约束条件下求 $\ln \Omega$ 的极大值：
+\begin{itemize}
+    \item \textbf{约束条件}：
+    \begin{enumerate}
+        \item 总粒子数守恒：$\sum N_i = N$
+        \item 总能量守恒：$\sum N_i \epsilon_i = E$
+    \end{enumerate}
+    \item \textbf{变分方程}：$\delta(\ln \Omega + \alpha \sum N_i + \beta \sum N_i \epsilon_i) = 0$。
+\end{itemize}
+
+\subsection{最终分布公式总结}
+通过对 $\ln \Omega$ 求导并解方程，得到三类分布的粒子分配数 $N_i$：
+
+\begin{enumerate}
+    \item \textbf{玻尔兹曼分布}：
+    \[ N_{i,BM} = g_i e^{-\alpha - \beta \epsilon_i} = g_i e^{-\beta(\epsilon_i - \mu)} \]
+    其中 $\beta = \frac{1}{k_B T}$，$\mu$ 为化学势。
+    \item \textbf{玻色分布}：
+    \[ N_i^B = \frac{g_i}{e^{\alpha + \beta \epsilon_i} - 1} \]
+    \item \textbf{费米分布}：
+    \[ N_i^F = \frac{g_i}{e^{\alpha + \beta \epsilon_i} + 1} \]
+\end{enumerate}
+
+\section{黑体辐射与普朗克公式}
+
+\subsection{光子的波粒二象性}
+在处理热辐射时，将电磁场视为光子气体：
+\begin{itemize}
+    \item \textbf{麦克斯韦理论}：光速 $c = \frac{1}{\sqrt{\varepsilon_0 \mu_0}}$。
+    \item \textbf{普朗克假设 (Wave-particle duality)}：
+    \[ \epsilon_0 = \hbar \omega, \quad p_0 = \hbar k \]
+    其中速率关系满足：$\frac{\epsilon_0}{p_0} = \frac{\omega}{k} = \omega \lambda = c$（此处 $\omega \lambda$ 为板书记录形式，对应频率与波长的关系）。
+\end{itemize}
+
+\subsection{基尔霍夫定律 (Kirchhoff's Law)}
+对于任何处于热平衡的物体，其单色辐射出射度 $r(T, \lambda)$ 与单色吸收率 $a(T, \lambda)$ 之比等于同温度下黑体的单色辐射出射度 $f(T, \lambda)$：
+\[ r(T, \lambda) = a(T, \lambda) f(T, \lambda) \]
+
+\subsection{黑体辐射能态密度推导}
+考虑边长为 $L$ 的立方体腔室：
+\begin{enumerate}
+    \item \textbf{状态数统计}：
+    \[ D(\omega) d\omega = dn_x dn_y dn_z = d\left(\frac{L}{\lambda_x}\right) d\left(\frac{L}{\lambda_y}\right) d\left(\frac{L}{\lambda_z}\right) = V dk_x dk_y dk_z \]
+    \item \textbf{频率密度函数}：
+    考虑光子的两个偏振态（因子 2），在 $k$ 空间中：
+    \[ \rho(\omega) d\omega = V \cdot 2 \cdot \frac{1}{8} \cdot \frac{4\pi k^2 dk}{(2\pi/L)^3} \text{ (经整理得)} = 8\pi V \frac{\omega^2}{4\pi^2 c^2} \frac{d\omega}{2\pi c} = \frac{\omega^2}{\pi^2 c^3} V d\omega \]
+    \item \textbf{波长表示下的状态密度}：
+    利用 $v = c/\lambda$，$dv = c \, d(1/\lambda)$：
+    \[ D(\lambda) d\lambda = \frac{8\pi V}{\lambda^4} d\lambda \]
+\end{enumerate}
+
+\subsection{经典辐射定律的局限性}
+\begin{itemize}
+    \item \textbf{瑞利-金斯公式 (Rayleigh-Jeans Law)}：
+    基于经典能量均分定理，每个模态平均能量 $\bar{\epsilon} = k_B T$。
+    \[ J = \frac{1}{4} c D = \frac{1}{4} c \frac{8\pi}{\lambda^4} = \frac{2\pi c}{\lambda^4} \]
+    单色辐射出射度：$r_\lambda(T, \lambda) = \frac{2\pi c}{\lambda^4} [k_B T]$。（在短波波段导致“紫外灾难”）。
+    \item \textbf{维恩近似 (Wien Approximation)}：
+    基于 $\epsilon \propto \frac{1}{\lambda}$ 及玻尔兹曼分布 $n(\epsilon) \propto e^{-\frac{\epsilon}{k_B T}}$：
+    \[ \bar{\epsilon} \propto \epsilon e^{-\frac{\epsilon}{k_B T}} \propto \frac{1}{\lambda} e^{-\frac{C_2}{\lambda T}} \]
+    \[ r_B(T, \lambda) = \frac{C_1}{\lambda^5} e^{-\frac{C_2}{\lambda T}} \]
+    （仅在短波波段有效）。
+\end{itemize}
+
+\subsection{普朗克定律 (Planck's Law)}
+普朗克引入能量量子化假设：$\epsilon_n(\nu) = n h \nu$。
+\begin{enumerate}
+    \item \textbf{平均能量推导}：
+    \[ \bar{\epsilon} = \frac{\sum_{n=0}^{\infty} E_n e^{-\beta E_n}}{\sum_{n=0}^{\infty} e^{-\beta E_n}} = \frac{hc}{\lambda \left( e^{\frac{hc}{\lambda k_B T}} - 1 \right)} \]
+    \item \textbf{普朗克公式}：
+    \[ r_B(T, \lambda) = \frac{2\pi c}{\lambda^4} \overline{\epsilon(\nu)} = \frac{2\pi h c^2}{\lambda^5} \frac{1}{e^{\frac{hc}{\lambda k_B T}} - 1} \]
+\end{enumerate}
+
+\subsection{辐射定律总结}
+\begin{itemize}
+    \item \textbf{斯特藩-玻尔兹曼定律}：总辐射能 $E(T) = \sigma T^4$。
+    \item \textbf{维恩位移定律}：峰值波长满足 $\lambda_m T = b$。
+\end{itemize}
+
+\section{分子碰撞与平均自由程}
+
+\subsection{分子碰撞频率 $\bar{Z}$}
+考虑分子的有效碰撞横截面 $\sigma$：
+\begin{itemize}
+    \item \textbf{横截面定义}：$\sigma = \frac{\pi}{4}(d_1 + d_2)^2$（对于同类分子 $\sigma = \pi d^2$）。
+    \item \textbf{碰撞数统计}：在 $\Delta t$ 时间内，分子扫过的“碰撞圆柱体”体积为 $V_{col} = \sigma \bar{u} \Delta t$。
+    \item \textbf{相对速度}：由于所有分子都在运动，需使用平均相对速度 $\bar{u} = \sqrt{2} \bar{v}$。
+    \item \textbf{平均碰撞频率}：
+    \[ \bar{Z} = \frac{N_{col}}{\Delta t} = n \sigma \bar{u} = \sqrt{2} n \sigma \bar{v} \]
+\end{itemize}
+
+\subsection{平均自由程 (Mean Free Path) $\lambda$}
+分子两次连续碰撞之间自由运动的平均路程：
+\begin{itemize}
+    \item \textbf{基本公式}：
+    \[ \lambda = \frac{\bar{v}}{\bar{Z}} = \frac{1}{\sqrt{2} n \sigma} \]
+    \item \textbf{宏观物理量表示}：
+    代入理想气体状态方程 $P = n k_B T$：
+    \[ \lambda = \frac{k_B T}{\sqrt{2} \sigma P} \]
+    结论：平均自由程与温度成正比，与压强成反比。
+\end{itemize}
+
+\subsection{自由程的分布律推导}
+设 $P(\lambda)$ 为分子自由行走距离 $\lambda$ 之后发生碰撞的概率：
+\begin{enumerate}
+    \item \textbf{推导逻辑}：在 $\lambda + d\lambda$ 处未碰撞的概率等于在 $\lambda$ 处未碰撞概率与在 $d\lambda$ 内未碰撞概率之积。
+    \[ 1 - P(\lambda + d\lambda) = [1 - P(\lambda)] [1 - P(d\lambda)] \]
+    其中 $1 - P(d\lambda) = 1 - \frac{d\lambda}{\bar{\lambda}}$。
+    \item \textbf{指数分布结果}：
+    \[ P(\lambda) = 1 - e^{-\frac{\lambda}{\bar{\lambda}}} \]
+    \item \textbf{概率密度函数}：
+    \[ f(\lambda) = \frac{1}{\bar{\lambda}} e^{-\frac{\lambda}{\bar{\lambda}}} \]
+\end{enumerate}
+
+\section{近平衡态中的输运过程 (Transport Processes)}
+
+\subsection{基本概念与平衡态分类}
+\begin{itemize}
+    \item \textbf{输运性质 (Transport Properties)}：描述系统如何将动量、能量或粒子从一个地方输运到另一个地方。
+    \item \textbf{平衡态 (Equilibrium State)}：所有宏观参数均与时间无关，且空间分布均匀。
+    \item \textbf{近平衡态}：系统处于非平衡态，但偏离平衡态较小，通常呈现为“稳恒态”，即宏观参数不随时间改变，但存在空间梯度。
+    \item \textbf{弛豫 (Relaxation)}：当外部条件恒定时，粒子间的相互作用（碰撞）驱动系统从非平衡态向平衡态趋近的过程。
+\end{itemize}
+
+\subsection{输运现象的宏观规律}
+输运现象本质上是由于某种物理量存在空间分布不均匀（梯度）而引起的。
+
+\subsubsection{黏滞现象 (Viscosity) —— 动量的输运}
+当流体作层流（Laminar flow）运动时，相邻流层之间因相对滑动而产生的互相阻碍的现象。
+\begin{itemize}
+    \item \textbf{牛顿黏滞定律}：
+    \[ f = -\eta \frac{du}{dz} S \]
+    其中：
+    \begin{itemize}
+        \item $f$：粘滞力（内摩擦力）。
+        \item $\eta$：黏度（黏滞系数），单位为 $\text{N} \cdot \text{s} \cdot \text{m}^{-2}$ 或 $\text{Pa} \cdot \text{s}$。
+        \item $\frac{du}{dz}$：流速梯度，“$-$”号表示粘滞力方向与流速梯度方向相反。
+    \end{itemize}
+    \item \textbf{切向动量流密度 ($J_p$)}：单位时间通过单位面积转移的定向动量。
+    \[ J_p = \frac{1}{S} \frac{dP}{dt} = -\eta \frac{du}{dz} \]
+    \item \textbf{温度影响}：
+    \begin{itemize}
+        \item \textbf{液体}：温度越高，黏滞系数越小（分子间距增大，吸引力减弱）。
+        \item \textbf{气体}：温度越高，黏滞系数越大（分子热运动加剧，跨层动量交换增加）。
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{扩散现象 (Diffusion) —— 粒子的输运}
+由于粒子数密度 $n$ 不均匀，导致粒子从高密度区向低密度区迁移。
+\begin{itemize}
+    \item \textbf{菲克扩散定律 (Fick's Law)}：
+    \[ J_n = -D \frac{dn}{dz} \]
+    其中 $D$ 为扩散系数，单位为 $\text{m}^2 \text{s}^{-1}$。
+    \item \textbf{质量通量 ($J_M$)}：单位时间内通过单位面积的质量。
+    \[ J_M = -D \frac{d\rho}{dz} \]
+    \item \textbf{扩散方程 (Diffusion Equation)}：基于质量守恒与净流入量推导：
+    \[ \frac{\partial n}{\partial t} = D \frac{\partial^2 n}{\partial z^2} = D \nabla^2 n \]
+\end{itemize}
+
+\subsubsection{热传导现象 (Heat Conduction) —— 能量的输运}
+由于温度 $T$ 不均匀，热量从高温区向低温区传递。
+\begin{itemize}
+    \item \textbf{傅立叶热传导定律 (Fourier's Law)}：
+    \[ h = -\kappa \frac{dT}{dz} \]
+    其中 $h$ 为热流密度（单位面积的热流量），$\kappa$ 为热导率（导热系数），单位为 $\text{W} \cdot \text{m}^{-1} \cdot \text{K}^{-1}$。
+    \item \textbf{传热方式}：
+    \begin{enumerate}
+        \item \textbf{传导}：分子热运动引起。
+        \item \textbf{辐射}：光子气体热运动引起（真空中亦可，最新研究表明量子涨落可实现声子在真空中传热）。
+        \item \textbf{对流}：流体宏观运动引起。
+    \end{enumerate}
+\end{itemize}
+
+\subsection{经典应用：泊肃叶 (Poiseuille) 公式推导}
+研究半径为 $R$、长为 $L$ 的管道内，粘度为 $\eta$ 的流体在压强差 $\Delta p$ 驱动下的稳定流动。
+\begin{enumerate}
+    \item \textbf{力学平衡}：取半径为 $r$、厚度 $dr$ 的圆柱壳，其受到的压强差动力与内外侧粘滞力差平衡。
+    \[ d\left( r \frac{dv}{dr} \right) = -\frac{\Delta p}{L\eta} r dr \]
+    \item \textbf{积分与边界条件}：
+    在 $r=0$ 处，流速 $v$ 有限，导数 $\frac{dv}{dr}=0$（轴对称），得常数 $C=0$。
+    在 $r=R$ 处（管壁），流速 $v=0$。
+    \item \textbf{流速分布}（抛物线型）：
+    \[ v(r) = \frac{\Delta p}{4L\eta} (R^2 - r^2) \]
+    \item \textbf{体积流量 $Q$}：
+    \[ Q = \int_0^R v(r) 2\pi r dr = \frac{\pi R^4 \Delta p}{8\eta L} \]
+\end{enumerate}
+
+\section{气体输运现象的微观解释}
+
+\subsection{基本假设}
+\begin{itemize}
+    \item \textbf{稀薄性}：气体足够稀薄（满足 $\bar{\lambda}$ 公式），但不能太稀薄（局部平衡态仍成立）。满足尺度关系：$(V)^{1/3} \gg \bar{\lambda} \gg d$。
+    \item \textbf{局部平衡假设}：虽然全局非平衡，但在波长量级的小单元内，温度、密度、平均速度可确定，且状态随空间变化缓慢：
+    \[ \bar{\lambda} \left| \frac{dT}{dz} \right| \ll T, \quad \bar{\lambda} \left| \frac{dn}{dz} \right| \ll n \]
+\end{itemize}
+
+\subsection{输运过程中的“流” (Flux) 推导}
+\subsubsection{简化的“1/6”模型}
+假定所有分子速率均为 $\bar{v}$，且均沿坐标轴的 6 个方向运动。
+\begin{enumerate}
+    \item \textbf{穿过平面的粒子数}：在 $\Delta t$ 时间内，向上穿过 $z_0$ 平面的粒子数为 $N = \frac{1}{6} n \bar{v} \Delta S \Delta t$。
+    \item \textbf{携带的物理量}：分子在距离界面一个平均自由程（或弛豫距离 $\alpha \bar{\lambda}$）处发生最后一次碰撞，从而携带该处的物理量 $q$ 越过界面。
+    \item \textbf{净流密度推导}：
+    \[ J_{A \to B} = \frac{1}{6} \bar{v} [ (nq)_{z_0 - \alpha\bar{\lambda}} - (nq)_{z_0 + \alpha\bar{\lambda}} ] \]
+    利用一阶泰勒展开（线性近似）：
+    \[ (nq)_{z_0 \pm \alpha\bar{\lambda}} \approx (nq)_{z_0} \pm \frac{d(nq)}{dz} (\alpha\bar{\lambda}) \]
+    得到单位面积上的流：
+    \[ \frac{J}{\Delta S} \approx -\frac{1}{3} \alpha \bar{\lambda} \bar{v} \frac{d(nq)}{dz} \]
+\end{enumerate}
+
+\subsubsection{精确积分计算（以黏滞系数为例）}
+考虑速率在 $v \sim v+dv$、方向在 $\theta \sim \theta+d\theta$ 范围内的分子数 $nf(v)dv (\frac{1}{2}\sin\theta d\theta)$。
+\begin{itemize}
+    \item \textbf{垂直输运分量}：分子穿过界面的分量为 $v \cos\theta$。
+    \item \textbf{动量增量}：分子从上层（距离 $\bar{\lambda}\cos\theta$ 处）带来的 $x$ 方向动量相对于本地的差值为 $-m \left(\frac{\partial u}{\partial z}\right) \allowbreak \bar{\lambda} \cos\theta$。
+    \item \textbf{总动量流密度}：
+    \[ J_p = \int_0^\infty \int_0^\pi (v \cos\theta) [nf(v)dv (\frac{1}{2}\sin\theta d\theta)] \left[ -m \frac{\partial u}{\partial z} \bar{\lambda} \cos\theta \right] \]
+    积分计算后得：
+    \[ J_p = -\frac{1}{3} nm \bar{\lambda} \bar{v} \frac{du}{dz} \]
+    \item \textbf{结论：微观输运系数表达式}：
+    \begin{itemize}
+        \item \textbf{黏滞系数}：$\eta = \frac{1}{3} nm \bar{\lambda} \bar{v}$
+        \item \textbf{热导率}：$\kappa = \frac{1}{3} n \bar{v} \bar{\lambda} \frac{i}{2}k_B = \frac{1}{3} \rho \bar{v} \bar{\lambda} c_V$
+        \item \textbf{扩散系数}：$D = \frac{1}{3} \bar{\lambda} \bar{v}$
+    \end{itemize}
+\end{itemize}
+
+\section{气体输运系数的微观推导 (Microscopic Transport Theory)}
+
+\subsection{输运过程中的“流” (The Flux)}
+输运现象的本质是分子的热运动将界面一侧的物理量 $Q$ 携带至另一侧。
+\begin{itemize}
+    \item \textbf{一级近似模型 (1/6 模型)}：
+    假设所有分子的速率均为 $\bar{v}$，且分为六组，每组沿一个坐标轴方向运动。在 $\Delta t$ 时间内，沿 $+z$ 方向穿过界面 $\Delta S$ 的粒子数为：
+    \[ N = \frac{1}{6} n \bar{v} \Delta S \Delta t \]
+    \item \textbf{携带物理量与同化}：
+    粒子越过界面 $z_0$ 后，在距离为 $\alpha \bar{\lambda}$ 的路径中与当地粒子碰撞并被“同化”。其携带的物理量 $q$（每个粒子携带的量，$q = Q/N$）对应于其最后一次碰撞处（$z_0 \pm \alpha \bar{\lambda}$）的分布。
+    \item \textbf{净流密度推导}：
+    单位面积上的流为：
+    \[ \frac{J_{A \to B}}{\Delta S} = \frac{1}{6} \bar{v} \left[ (nq)_{z_0 - \alpha\bar{\lambda}} - (nq)_{z_0 + \alpha\bar{\lambda}} \right] \]
+    对 $nq$ 进行线性近似：$(nq)_{z_0 \pm \alpha\bar{\lambda}} \approx (nq)_{z_0} \pm \frac{d(nq)}{dz} (\alpha\bar{\lambda})$，得：
+    \[ \frac{J}{\Delta S} \approx - \frac{1}{3} \alpha \bar{\lambda} \bar{v} \frac{d(nq)}{dz} \]
+\end{itemize}
+
+\subsection{三大输运系数的微观表达式}
+对比宏观定律（见第 10 节），可得理想气体的输运系数：
+
+\subsubsection{黏滞系数 (Viscosity) $\eta$}
+物理量 $q = p = m u$（定向动量）。
+\[ J_p = - \frac{1}{3} nm \alpha \bar{\lambda} \bar{v} \frac{du}{dz} \quad \Rightarrow \quad \eta = \frac{1}{3} nm \alpha \bar{\lambda} \bar{v} \]
+代入 $\bar{\lambda} = \frac{1}{\sqrt{2} \sigma n}$ 及 $\bar{v} = \sqrt{\frac{8k_B T}{\pi m}}$，得：
+\[ \eta = \frac{2\alpha}{3\sigma} \sqrt{\frac{m k_B T}{\pi}} \propto T^{1/2} \]
+
+\subsubsection{扩散系数 (Diffusion) $D$}
+物理量 $q = 1$（粒子本身）。
+\[ J_n = - \frac{1}{3} \alpha \bar{\lambda} \bar{v} \frac{dn}{dz} \quad \Rightarrow \quad D = \frac{1}{3} \alpha \bar{\lambda} \bar{v} \]
+代入状态方程 $P = nk_B T$，得：
+\[ D = \frac{2\alpha}{3 P \sigma} \frac{(k_B T)^{3/2}}{(\pi m)^{1/2}} \propto \frac{T^{3/2}}{P} \]
+
+\subsubsection{热导率 (Thermal Conductivity) $\kappa$}
+物理量 $q = \epsilon = \frac{i}{2} k_B T$（平均热运动能量）。
+\[ h = - \frac{1}{3} n c_V m \alpha \bar{\lambda} \bar{v} \frac{dT}{dz} \quad \Rightarrow \quad \kappa = \frac{1}{3} n m c_V \alpha \bar{\lambda} \bar{v} = \eta c_V \]
+其中 $c_V$ 为单位质量热容。
+
+\subsection{输运性质的讨论与局限性}
+\begin{enumerate}
+    \item \textbf{$\eta$ 与压强的无关性}：在恒定温度下，压强增大导致 $n$ 增加（利于动量转移），但 $\bar{\lambda}$ 相应减小（使转移路程缩短），两者效应抵消。此结论在极高压或极低压（稀薄气体）下失效。
+    \item \textbf{Chapman-Enskog 修正}：简单的 $1/3$ 因子并不精确。经过更严格的速度分布积分，黏滞系数修正为：
+    \[ \eta = \frac{5\alpha}{16 d^2} \sqrt{\frac{m k_B T}{\pi}} \]
+    \item \textbf{温度依赖性}：实验表明 $\eta$ 随 $T$ 增加比 $T^{1/2}$ 更快。原因是有效碰撞截面 $\sigma = \pi d^2$ 依赖于温度：高温下分子运动更快，必定更“正面”相碰，有效直径 $d$ 变小。
+\end{enumerate}
+
+\section{稀薄气体的输运与真空}
+当气体极度稀薄时，分子间的碰撞频率降低，必须考虑分子与器壁的相互作用。
+\begin{itemize}
+    \item \textbf{有效平均自由程}：$\frac{1}{\bar{\lambda}_t} = \frac{1}{\bar{\lambda}_{p-p}} + \frac{1}{\bar{\lambda}_{p-w}}$，其中 $p-p$ 为粒子间碰撞，$p-w$ 为粒子与器壁碰撞。
+    \item \textbf{极限情况 (Knudsen Gas)}：当 $\bar{\lambda} \gg L$（容器线尺度）时，系统处于高真空状态。此时输运性质由器壁碰撞决定，$\bar{\lambda}_t \approx L$。
+\end{itemize}
+
+\section{布朗运动 (Brownian Motion)}
+
+\subsection{物理背景与观测}
+1827 年由 Robert Brown 观测到。
+\begin{itemize}
+    \item \textbf{现象}：悬浮在流体中的微小颗粒呈现不规则、永不停息的“抖动”。颗粒越小、液体黏性越小、温度越高，运动越剧烈。
+    \item \textbf{本质}：流体分子对颗粒无序撞击力的不平衡导致的涨落现象。
+\end{itemize}
+
+\subsection{朗之万方程 (Langevin Equation)}
+考虑一个半径为 $a$ 的球形布朗颗粒，其受力分为：
+\begin{enumerate}
+    \item \textbf{无序驱动力 $\vec{F}(t)$}：由分子撞击产生的随机力。
+    \item \textbf{黏性阻力（斯托克斯定律）}：$\vec{f}_V = -6\pi a \eta \vec{v}$。
+\end{enumerate}
+运动方程为：
+\[ m \frac{d^2 \vec{r}}{dt^2} = \vec{F}(t) - 6\pi a \eta \frac{d\vec{r}}{dt} \]
+
+\subsection{爱因斯坦扩散理论推导}
+以 $x$ 方向为例，方程为 $m \frac{d^2x}{dt^2} = F_x(t) - 6\pi a \eta \frac{dx}{dt}$。
+\begin{enumerate}
+    \item \textbf{数学变换}：利用 $\frac{d^2(x^2)}{dt^2} = 2x \frac{d^2x}{dt^2} + 2 \left( \frac{dx}{dt} \right)^2$。
+    \item \textbf{平均处理}：对大量颗粒取平均。由于驱动力与位置无关，$\overline{x F_x(t)} = 0$。
+    \item \textbf{能量均分原理}：$\frac{1}{2} m \overline{\left( \frac{dx}{dt} \right)^2} = \frac{1}{2} k_B T$。
+    \item \textbf{微分方程}：令 $Z = \frac{d(\overline{x^2})}{dt}$，得：
+    \[ \frac{m}{2} \frac{dZ}{dt} - k_B T = -3\pi a \eta Z \]
+    \item \textbf{解与结论}：
+    当 $t \gg \frac{m}{6\pi a \eta}$（通常为 $\mu\text{s}$ 量级）时，指数项衰减：
+    \[ \frac{d(\overline{x^2})}{dt} = \frac{k_B T}{3\pi a \eta} \]
+    积分得爱因斯坦位移公式：
+    \[ \overline{x^2} = \frac{k_B T}{3\pi a \eta} t = 2Dt \]
+\end{enumerate}
+
+\subsection{爱因斯坦扩散系数 (Einstein Relation)}
+\[ D = \frac{k_B T}{6\pi a \eta} \]
+\begin{itemize}
+    \item \textbf{意义}：将微观的扩散系数 $D$ 与宏观的黏度 $\eta$ 及温度 $T$ 联系起来。
+    \item \textbf{距离特征}：均方根位移 $\sqrt{\overline{x^2}} \propto \sqrt{t}$，这表明布朗颗粒会随时间缓慢偏离初始位置，呈现扩散规律。
+\end{itemize}
+
+\end{document}
