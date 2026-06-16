@@ -47,4 +47,4 @@
 
 ## 📄 开源协议
 
-本项目采用 [MIT 许可证](LICENSE) 开源。
+本项目采用 [CC BY-NC-SA 4.0](LICENSE) 开源。
