@@ -17,6 +17,7 @@
 % 标题格式
 \titleformat{\section}{\Large\bfseries\color{blue!70!black}}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries\color{blue!50!black}}{\thesubsection}{1em}{}
+\newtheorem{thoughts}{思路}[subsection]
 
 \title{习题课笔记}
 \author{周锦添}
@@ -335,6 +336,10 @@ Q_2=\nu RT_2\ln\frac{V_1}{V_2},\qquad Q_1=\nu RT_1\ln\frac{V_1}{V_2}
 \textbf{题目}：试在 $p$-$V$ 图上画出以下理想气体系统完成的准静态过程：
 (1) $p=kV$；(2) $p=kT$；(3) $V=kT$，其中 $k$ 为满足各自要求的常量。并计算当系统体积由 $V_1$ 变至 $V_2$ 时，上述三过程中系统对外界所作的功。
 
+\begin{thoughts}
+  直接做图像计算即可。
+\end{thoughts}
+
 \textbf{解答}：
 
 (1) \textbf{作图}
@@ -371,6 +376,10 @@ Q_2=\nu RT_2\ln\frac{V_1}{V_2},\qquad Q_1=\nu RT_1\ln\frac{V_1}{V_2}
 
 \textbf{题目}：一气体系统的定压摩尔热容量随温度改变的规律为 $C_p=a+bT-cT^2$，其中 $a,b,c$ 是常量。当 $n\ \mathrm{mol}$ 气体经一个等压过程使温度从 $T_1$ 变到 $T_2$ 时，气体从外界吸收的热量为多少？
 
+\begin{thoughts}
+  利用$\triangle Q = \triangle U = C_P \triangle T$，注意是等压摩尔热容，所以需要乘物质的量
+\end{thoughts}
+
 \textbf{解答}：
 \[
 Q=\int_{T_1}^{T_2}C_p\,n\,\mathrm{d}T
@@ -385,6 +394,10 @@ Q=\int_{T_1}^{T_2}C_p\,n\,\mathrm{d}T
 \subsubsection{题 4.7}
 
 \textbf{题目}：$1.0\ \mathrm{g}$ 氮气原来的温度和压强分别为 $423\ \mathrm{K}$ 和 $5.066\times 10^5\ \mathrm{Pa}$，经准静态绝热膨胀后，体积变为原来的两倍。试确定在这一过程中气体对外界所作的功。
+
+\begin{thoughts}
+  利用公式$$W=\frac{P_2V_2-P_1V_1}{\gamma-1}=\frac{\nu R}{\gamma-1} (T_2-T_1)$$，得到以下重要结果
+\end{thoughts}
 
 \textbf{解答}：将氮气视为理想气体，由绝热方程 $pV^{\gamma}=p_1V_1^{\gamma}$ 得
 \[
@@ -413,6 +426,10 @@ W'=\frac{(1\times 10^{-3})\times 8.31\times 423}{\dfrac{7}{5}-1}
 
 \textbf{题目}：在原子弹爆炸后 $0.1\ \mathrm{s}$ 所出现的“火球”是半径约 $15\ \mathrm{m}$、温度为 $3000\ \mathrm{K}$ 的气体球，试确定温度变为 $300\ \mathrm{K}$ 时，“火球”的半径大约为多大？
 
+\begin{thoughts}
+  绝热过程$$PV^\gamma = \text{Const} \Rightarrow TV^{\gamma-1} = \text{Const}$$
+\end{thoughts}
+
 \textbf{解答}：将“火球”膨胀视为绝热过程，满足
 \[
 TV^{\gamma-1}=T_1V_1^{\gamma-1}
@@ -439,6 +456,10 @@ R_2=\left(\frac{3000}{300}\right)^{\frac{1}{3\times 0.4}}\times 15
 (1) 将一边压下后使水银振荡，证明不计摩擦时周期 $\tau_1=2\pi\sqrt{\dfrac{h}{2g}}$。
 (2) 左侧封闭气柱高 $l$，作准静态绝热振荡，气压计水银柱高 $h_0$，证明周期变为
 $\tau_2=2\pi\sqrt{\dfrac{h}{2g+\gamma h_0g/l}}$。
+
+\begin{thoughts}
+  对上升部分柱体受力分析，列微分方程，利用关系$$\omega^2x + a=0$$
+\end{thoughts}
 
 \textbf{证明}：
 
@@ -491,6 +512,12 @@ p\approx p_0\left(1-\gamma\frac{x}{l}\right)
     \item[(4)] 假设在观测站 $M_2$ 与 $M_3$ 之间的降雨均匀，并记每小时内每平方米面积内降落 $1\ \mathrm{kg}$ 雨水为 $1\ \mathrm{mm}$ 的降雨量，试确定这两个观测站之间的降雨量。
     \item[(5)] 在 $M_4$ 处进行观测，测得的气温很可能为多少 $^{\circ}\mathrm{C}$？与 $M_1$ 处的相比，这里的空气有何特点？
 \end{enumerate}
+
+\begin{thoughts}
+  由等温模型分析知道$\delta P$和$\delta z$的关系，而$PV^{\gamma - 1} = Const$，这导致了$\frac{dT}{dz}$的等式\\
+  对温度变化的贡献除了高度上升还有水蒸气液化放热。考虑单位质量内有$m_\omega$水蒸气液化，则由能量守恒可知液化后温度变化值，综合可得结果\\
+  降水量用总降水平均时间和面积即可
+\end{thoughts}
 
 \textbf{解答}：
 
@@ -678,6 +705,10 @@ T_4=\left(\frac{p_4}{p_3}\right)^{\frac{\gamma-1}{\gamma}}T_3
     \item[(4)] 吸收的热量 $Q$。
 \end{enumerate}
 
+\begin{thoughts}
+  多方过程系数用$PV^n=\text{Const}$确定，内能变化量$U=C_V(T_2-T_1)$，对外界做的功$W'=\frac{\nu R}{n-1}(T_2-T_1)$，吸收热量$Q=C_n(T_2-T_1)=\frac{n-\gamma}{n-1}C_V$，其中$\gamma = 1 + \frac{R}{C_V}$
+\end{thoughts}
+
 \textbf{解答}：
 
 \textbf{(1) 多方指数 $n$}
@@ -808,6 +839,10 @@ C=C_V-\frac{a_0^2}{TV}.
 \]
 并说明气体的温度随膨胀而变化的行为。
 
+\begin{thoughts}
+  本题中气体膨胀为$n=2$的多方过程，$C_n$由上题关系式求解，温度与体积的关系可由压强与体积的关系导出
+\end{thoughts}
+
 \textbf{证明}：
 
 由热力学第一定律 $\mathrm{d}U=\mathrm{d}Q+\mathrm{d}W$（其中 $\mathrm{d}W=-p\,\mathrm{d}V$ 为外界对系统做的功），可得
@@ -867,6 +902,10 @@ TV=\text{常量},\qquad\text{即}\qquad T\propto\frac{1}{V}.
     \item[(2)] 计算氧气在一个循环中所作的净功；
     \item[(3)] 计算此循环的效率。
 \end{enumerate}
+
+\begin{thoughts}
+  画出图像，计算效率的技巧是计算热而非功
+\end{thoughts}
 
 \textbf{解答}：
 
@@ -1121,6 +1160,10 @@ T_A V_A^{\gamma-1}=T_B V_B^{\gamma-1},
 (1) 证明准静态绝热方程 $p(V_m-b)^{\gamma}=\text{常量}$；
 (2) 证明该气体卡诺循环效率仍为 $\eta=1-T_2/T_1$。
 
+\begin{thoughts}
+  绝热状态下$Q=0$，所以考虑$$dU = -pdV = -\frac{RT}{V_m-b}dV_m = C_{V,m}dT$$，然后用迈耶关系代换即可，卡诺循环的效率和之前求法相同，卡诺热机指的是由两个等温两个绝热过程组成的可逆热机
+\end{thoughts}
+
 \textbf{证明}：
 
 (1) 由状态方程 $p(V_m-b)=RT$ 微分得
@@ -1177,6 +1220,11 @@ Q'_2=RT_2\ln\frac{V_{m,C}-b}{V_{m,D}-b}
 \textbf{题目}：制冷机作热泵用，室外 $-5^{\circ}\mathrm{C}$，室内保持 $20^{\circ}\mathrm{C}$。
 (1) 房间向室外散热主要由面积 $5\ \mathrm{m}^2$、厚 $2\ \mathrm{mm}$ 的玻璃引起，热导率 $\kappa=0.75\ \mathrm{W/(m\cdot K)}$，电费 $0.5$ 元/度。求空调一天工作 $12\ \mathrm{h}$ 至少花多少电费。
 (2) 若换为厚 $2\ \mathrm{mm}$、中间有 $0.5\ \mathrm{mm}$ 空气夹层的双层玻璃（空气 $\kappa=0.025\ \mathrm{W/(m\cdot K)}$），求可节省的电费。
+
+\begin{thoughts}
+  主要是利用傅里叶公式，单位面积热导和温度梯度成正比\\
+  注意到需要设置两个温差变量，利用温差和列出等式，此外空气夹层不储热，所以有热导等式，可解出两端温差，进而求出热导，然后使用制冷机的最大效率等式，解出压缩机功率
+\end{thoughts}
 
 \textbf{解答}：
 
