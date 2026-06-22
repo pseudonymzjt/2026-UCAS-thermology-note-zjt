@@ -4528,6 +4528,10 @@ F_2<F_1\quad\text{即}\quad\frac{\mathrm{d}^2F_1}{\mathrm{d}V^2}<0
 
 \textbf{题目}：在 $p_0=101325\ \mathrm{Pa}$ 下，冰的熔点为 $273.15\ \mathrm{K}$，熔解热 $l=3.35\times 10^5\ \mathrm{J/kg}$，冰的比体积 $v_\alpha=1.0907\times 10^{-3}\ \mathrm{m^3/kg}$，水的比体积 $v_\beta=1.00013\times 10^{-3}\ \mathrm{m^3/kg}$。求冰水两相平衡曲线的斜率 $\mathrm{d}p/\mathrm{d}T$。
 
+\begin{thoughts}
+  代入克拉珀龙方程求解即可，但要注意单位变化和正负，压强升高，凝固点下降，所以有负号
+\end{thoughts}
+
 \textbf{解}：冰水相变为一级相变，由克拉珀龙方程：
 \[
 \frac{\mathrm{d}p}{\mathrm{d}T}
@@ -4550,6 +4554,10 @@ F_2<F_1\quad\text{即}\quad\frac{\mathrm{d}^2F_1}{\mathrm{d}V^2}<0
 \subsubsection{题 7.6（氨的熔点随压强变化）}
 
 \textbf{题目}：在 $1\ \mathrm{atm}$ 下，固态氨于 $83\ \mathrm{K}$ 熔解，摩尔熔解热 $L_m=1176\ \mathrm{J/mol}$，摩尔体积增加 $\Delta V_{1,m}=3.5\times 10^{-6}\ \mathrm{m^3}$。有外力施加时，潜热保持不变，但体积变化与 $T^{3/2}$ 成反比。问：若要使熔点提高一倍，需施加多大压力？
+
+\begin{thoughts}
+  利用克拉珀龙方程解微分方程即可
+\end{thoughts}
 
 \textbf{解}：由克拉珀龙方程：
 \[
@@ -4595,6 +4603,10 @@ T(V_{\beta,m}-V_{\alpha,m})=T_1^{3/2}\Delta V_{1,m}\,T^{-1/2}
 
 \textbf{题目}：某液体在某一压强下沸点为 $400\ \mathrm{K}$，且沸点每升高 $1\ \mathrm{K}$，平衡压强升高 $5\%$。试估计该液体的摩尔汽化热。
 
+\begin{thoughts}
+  克拉珀龙方程需要变化率和基准点，其余工作是解方程，带入比率和基准即可
+\end{thoughts}
+
 \textbf{解}：液气相变中，$V_{G,m}\gg V_{L,m}$，且蒸气近似为理想气体 $V_{G,m}=RT/p$。由克拉珀龙方程：
 
 \[
@@ -4633,6 +4645,11 @@ L_m=\frac{8.31\times 400\times 401\times\ln 1.05}{401-400}
 
 \textbf{题目}：质量为 $M$ 的固体，密度 $\rho_1$，在温度 $T$、压强 $p_1$ 下熔解成密度为 $\rho_2$ 的液体，熔解热为 $l$。求：(1) 内能增量；(2) 熵增量。
 
+\begin{thoughts}
+  针对非理想气体，谨慎使用公式，热力学第一定律仍然有效\\
+  温度不变下熵增就是在求热
+\end{thoughts}
+
 \textbf{解}：
 
 (1) 由热力学第一定律：
@@ -4663,6 +4680,10 @@ V_L-V_S=\frac{M}{\rho_2}-\frac{M}{\rho_1}
 \subsubsection{题 7.15（范德瓦尔斯等温线极值点轨迹）}
 
 \textbf{题目}：证明将 $p$-$V$ 图上不同温度下范德瓦尔斯模型等温线的极小值点和极大值点连起来的曲线方程为 $pV_m^3=a(V_m-2b)$。
+
+\begin{thoughts}
+  直接对范德瓦尔斯求微分以简化计算
+\end{thoughts}
 
 \textbf{证明}：$1\ \mathrm{mol}$ 范德瓦尔斯气体状态方程：
 \[
@@ -4699,6 +4720,10 @@ p=\frac{a}{V_m^2}-\frac{2ab}{V_m^3}
 \subsubsection{题 7.16（碳纳米管中水的凝结温度）}
 
 \textbf{题目}：碳纳米管中水与管壁接触角为 $\theta$，管半径 $R_p$，水的表面张力系数 $\sigma$，平面水的凝结温度为 $T_{S,B}$，冰的熔解热 $l$，密度 $\rho$。
+
+\begin{thoughts}
+  利用化学势相等，对微分定义式做线性近似，带入拉普拉斯公式和基本量求出关系，后面两问是在做数据拟合
+\end{thoughts}
 
 (1) 证明碳纳米管中水的凝结温度改变量为
 \[
